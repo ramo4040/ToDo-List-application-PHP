@@ -2,13 +2,10 @@
 
 namespace app\views;
 
-session_start();
 
 class SignUpView {
 
-    public static function renderSignUpForm() {
-        $errorMessage = isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '';
-        session_destroy();
+    public static function renderSignUpForm($errMsg = '') {
 ?>
         <div class="__formContainer">
             <div class="logo"></div>
@@ -16,7 +13,7 @@ class SignUpView {
                 <header>
                     <h2>Sign up</h2>
                     <p>Already Have An Account? <a href="./signin">Log in</a></p>
-                    <p id="errMsg"><?= $errorMessage ?></p>
+                    <p id="errMsg"><?= $errMsg ?></p>
                 </header>
                 <div class="form-group">
                     <label for="email">Email</label>

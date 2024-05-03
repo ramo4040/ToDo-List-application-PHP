@@ -13,7 +13,6 @@ class UserModel {
         unset($this->pdo);
     }
 
-
     public function createUser($email, $userName, $password) {
         $statement = $this->pdo->prepare('INSERT INTO users (email, userName,password) VALUES (?,?,?)');
         $statement->execute([
