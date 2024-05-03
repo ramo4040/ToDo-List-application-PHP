@@ -1,0 +1,373 @@
+@import url(var.css);
+
+:root {
+    --main-color: #eeeef4;
+    --secondary-color: #682ee4;
+    --secondary-color2: #682ee419;
+    --text2: #8e92b1;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    font-family: system-ui;
+    color: #000;
+    place-content: center;
+    background: url('../images/03.png');
+    background-position-y: 100%;
+    background-position-x: 60%;
+}
+
+.todoHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #fff;
+
+        img {
+            border-radius: 50%;
+            border: 3px solid var(--gray-4);
+        }
+    }
+}
+
+.main {
+    width: 60rem;
+    height: fit-content;
+    background-color: #121214;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.331);
+}
+
+
+.title {
+    color: white;
+}
+
+#title1 {
+    color: rgb(112, 80, 163);
+}
+
+.part1 {
+    background-color: #18171c;
+    width: 35%;
+    height: 30rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        color: #878792;
+        font-size: 1.05rem;
+
+        li {
+            a {
+                display: flex;
+                gap: 1rem;
+                text-decoration: none;
+            }
+
+            padding: .3rem 1rem;
+            transition: .4s;
+            cursor: pointer;
+
+            &:hover {
+                background: #2f2e36;
+            }
+        }
+    }
+}
+
+.part2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #18171c;
+    width: 65%;
+    height: 30rem;
+    padding: 1.5rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 0.5rem 1rem;
+            background-color: #2f2e36;
+            color: white;
+            transition: .2s;
+            border-radius: .5rem;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            i {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+}
+
+.container1 {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.title2 {
+    color: #a19ddb;
+}
+
+.taskList {
+    list-style-type: none;
+    color: black;
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+
+    li a {
+        display: flex;
+        align-items: start;
+        gap: 2rem;
+        text-decoration: none;
+
+        p {
+            color: #8e92b1;
+        }
+    }
+
+    input {
+        width: 1.2rem;
+        aspect-ratio: 1;
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+
+
+        &:checked::after {
+            background: #7050a3;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            aspect-ratio: 1;
+            width: 1.5rem;
+            border-radius: 50%;
+            border: 2px solid var(--text2);
+        }
+    }
+
+    .--date {
+        display: flex;
+        align-items: center;
+        color: #8e92b1;
+        gap: .8rem;
+
+
+    }
+}
+
+
+.button_container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: auto;
+
+    i {
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+.small_icons {
+    width: 25px;
+}
+
+.star_task {
+    width: 25px;
+    margin-left: 4px;
+}
+
+.icons {
+    width: 35px;
+    height: 35px;
+    margin-left: 150px;
+
+}
+
+
+
+
+.btn1 {
+    background-color: #7050a3;
+    color: white;
+    border: 0;
+}
+
+
+
+
+.__formContainer {
+    display: grid;
+    place-content: center;
+
+
+    .logo {
+        width: 3rem;
+        aspect-ratio: 1;
+        background: var(--secondary-color);
+        border-radius: 50%;
+        margin: 1rem 2rem;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    header small {
+        color: var(--gray-5);
+    }
+
+    #errMsg {
+        color: red;
+    }
+
+    #login-form {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: .8rem;
+        box-shadow: var(--shadow-3);
+        align-self: center;
+        justify-self: center;
+        width: 25rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+
+}
+
+.__formContainer,
+#addTaskForm,
+#editTaskForm {
+
+    .form-group {
+        display: grid;
+        gap: .5rem;
+    }
+
+    [type="submit"]:not(#updateTaskBtn) {
+        justify-self: end;
+        padding: .2rem 1rem;
+        background: var(--secondary-color);
+        border: 0;
+        color: #fff;
+        font-weight: 500;
+        border-radius: .4rem;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+    }
+
+    input,
+    textarea {
+        border: 0;
+        border-radius: 5px;
+        outline: 0;
+        border: 2px solid var(--gray-2);
+        padding: .2rem 1rem;
+
+        &:focus {
+            box-shadow: 0 0 1rem 0 var(--secondary-color2);
+            border-color: var(--secondary-color);
+        }
+    }
+}
+
+#editTaskForm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .button_container {
+        margin-top: auto;
+        justify-content: end;
+    }
+
+    >div {
+        color: #fff;
+        display: grid;
+        gap: 1rem;
+
+        input,
+        textarea {
+            background: #ced4da17;
+            border: 0;
+            color: #fff;
+        }
+    }
+}
+
+#addTask {
+    width: 30rem;
+    padding: var(--size-5);
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    border-radius: var(--radius-3);
+    box-shadow: var(--shadow-5);
+
+    &::backdrop {
+        backdrop-filter: blur(5px);
+    }
+
+    section,
+    form {
+        display: grid;
+        gap: 1rem;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+    }
+
+    footer {
+        justify-self: end;
+    }
+}
+
+
+#mainPage {
+    border: 0;
+    outline: 0;
+    padding: .4rem 0;
+    border: 2px solid var(--secondary-color);
+    text-align: center;
+    background: #fff;
+    text-decoration: none;
+
+}
