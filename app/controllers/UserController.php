@@ -6,8 +6,6 @@ use app\services\UserService;
 use app\views\LoginView;
 use app\views\SignUpView;
 
-session_start();
-
 class UserController {
     public function __construct(private UserService $service) {
     }

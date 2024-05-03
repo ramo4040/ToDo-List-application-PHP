@@ -43,7 +43,7 @@ class UserService {
 
         if (!$user || !password_verify($password, $user['password'])) {
             http_response_code(401);
-            return json_encode(['error' => 'Incorrect username or password.']);
+            return json_encode(['error' => 'Incorrect username or password. ']);
         }
 
         if ($user) {

@@ -13,9 +13,9 @@ class TaskModel {
         unset($this->pdo);
     }
 
-    public function getAllTasks() {
+    public function getAllTasks($createdBy) {
         $statement = $this->pdo->prepare('SELECT idtask,TitleTask,descTask,createdAt FROM tasks WHERE createdBy = ?');
-        $statement->execute([$_SESSION["userID"]]);
+        $statement->execute([$createdBy]);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 

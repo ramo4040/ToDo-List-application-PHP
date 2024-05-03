@@ -7,7 +7,7 @@ use app\views\TaskListView;
 use app\views\TodoView;
 use app\views\EditTaskView;
 
-session_start();
+
 
 class TodoController {
 
@@ -24,18 +24,27 @@ class TodoController {
     }
 
     function index() {
-        $tasks = $this->service->showAll();
-        $this->main(TaskListView::render($tasks));
+        $url = 'http://localhost/todo/api/tasks';
+        $context = stream_context_create([
+            'http' => [
+                'header' => 'Cookie: ' .  'id=' . $_SESSION["userID"]
+            ]
+        ]);
+        $response = json_decode(file_get_contents($url, false, $context), true);
+
+        $this->main(TaskListView::render($response));
     }
 
     function getTask($id) {
-        $task = $this->service->getTask($id);
-        $this->main(EditTaskView::render($task[0]));
+        $url = 'http://localhost/todo/api/task/' . $id;
+        $response = json_decode(file_get_contents($url), true)[0];
+        $this->main(EditTaskView::render($response));
     }
 
     function addTask() {
         if (isset($_POST['addTask'])) {
-            $this->service->add($_POST['title'], $_POST['description']);
+            $jsonData = json_encode($_POST);
+            $this->service->add($jsonData);
         }
     }
 

@@ -6,6 +6,7 @@ use app\Core\App;
 use app\controllers\HomeController;
 use app\controllers\TodoController;
 use app\controllers\UserController;
+use app\services\TaskService;
 
 class Router {
     private static $routes = [];
@@ -79,8 +80,10 @@ Router::post('/signup', [UserController::class, 'signup']);
 Router::post('/signin',  [UserController::class, 'signIn']);
 
 Router::get('/tasks', [TodoController::class, 'index']);
-
 Router::get('/task/{id}', [TodoController::class, 'getTask']);
+
+Router::get('/api/tasks', [TaskService::class, 'showAll']);
+Router::get('/api/task/{id}', [TaskService::class, 'getTask']);
 Router::post('/api/task', [TodoController::class, 'addTask']);
 Router::delete('/api/task', [TodoController::class, 'deleteTask']);
 Router::put('/api/task/{id}', [TodoController::class, 'editTask']);
