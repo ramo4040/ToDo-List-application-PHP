@@ -48,7 +48,7 @@ The following table describes the available API routes:
 
 ## Usage
 
-1.  Access the application in your browser.
+1.  Access the application in your browser. http://localhost/todo/
 2.  Sign up or sign in to access the ToDo list features.
 3.  Create, view, edit, and delete tasks as needed.
 
