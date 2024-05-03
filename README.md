@@ -42,10 +42,9 @@ The following table describes the available API routes:
 
 ## Installation and Setup
 
-1.  **Clone the repository:** `git clone https://github.com/your-username/todo-app.git`
-2.  **Install dependencies:** (if any - please specify if external libraries are used)
-3.  **Configure database connection:** Update the database credentials in the `Database` class.
-4.  **Run the application:** Use a PHP built-in server or configure a web server like Apache or Nginx.
+1.  **Clone the repository:** `git clone https://github.com/ramo4040/ToDo-List-application-PHP.git`
+2.  **Configure database connection:** Update the database credentials in the `Database - Config` class.
+3.  **Run the application:** Use a PHP built-in server or configure a web server like Apache or Nginx.
 
 ## Usage
 
