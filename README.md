@@ -2,6 +2,7 @@
 
 This repository contains a ToDo List application built with native PHP and PDO for database interactions. The application implements user authentication (signup and sign-in) and CRUD functionalities for managing tasks.
 
+<img src='public/images/1.png' width='410'> <img src='public/images//2.png' width='410'>
 ## Features
 
 *   **User Authentication:**
