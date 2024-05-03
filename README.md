@@ -30,19 +30,20 @@ This repository contains a ToDo List application built with native PHP and PDO f
 ## API Routes
 
 The following table describes the available API routes:
-
-| **Method** | **Route**           | **Controller**       | **Action**           | **Description**                                                                        |
-| :--------- | :------------------ | :------------------- | :------------------- | :--------------------------------------------------------------------------------------------- |
-| GET        | `/`                | HomeController       | index                | Renders the home page (landing page or task list - based on your implementation).       |
-| GET        | `/signup`           | HomeController       | signup               | Renders the signup form.                                                                 |
-| GET        | `/signin`           | HomeController       | signIn               | Renders the sign-in form.                                                                |
-| POST       | `/signup`           | UserController      | signup               | Processes user registration.                                                            |
-| POST       | `/signin`           | UserController      | signIn               | Processes user login.                                                                   |
-| GET        | `/tasks`            | TodoController      | index                | Retrieves a list of all tasks for the authenticated user.                             |
-| GET        | `/task/{id}`        | TodoController      | getTask             | Retrieves details of a specific task by ID.                                                |
-| POST       | `/api/task`         | TodoController      | addTask             | Creates a new task.                                                                    |
-| DELETE     | `/api/task`         | TodoController      | deleteTask          | Deletes a task (requires task ID to be sent in the request body).                      |
-| PUT        | `/api/task/{id}`    | TodoController      | editTask            | Updates an existing task.                                                               |
+| Method | Route             | Controller         | Action    | Description                                                                      |
+| :----- | :---------------- | :----------------- | :-------- | :------------------------------------------------------------------------------- |
+| GET    | `/`               | HomeController     | index     | Renders the home page (landing page or task list - based on your implementation). |
+| GET    | `/signup`         | HomeController     | signup    | Renders the signup form.                                                         |
+| GET    | `/signin`         | HomeController     | signIn    | Renders the sign-in form.                                                        |
+| POST   | `/signup`         | UserController      | signup    | Processes user registration.                                                     |
+| POST   | `/signin`         | UserController      | signIn    | Processes user login.                                                            |
+| GET    | `/tasks`          | TodoController     | index     | Retrieves a list of all tasks for the authenticated user.                       |
+| GET    | `/task/{id}`      | TodoController     | getTask   | Retrieves details of a specific task by ID.                                      |
+| GET    | `/api/tasks`      | TaskService        | showAll   | Retrieves all tasks.                                                             |
+| GET    | `/api/task/{id}`  | TaskService        | getTask   | Retrieves details of a specific task by ID.                                      |
+| POST   | `/api/task`       | TodoController     | addTask   | Creates a new task.                                                              |
+| DELETE | `/api/task`       | TodoController     | deleteTask| Deletes a task (requires task ID in the request body).                           |
+| PUT    | `/api/task/{id}`  | TodoController     | editTask  | Updates an existing task.                                                        |
 
 ## Installation and Setup
 
