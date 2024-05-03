@@ -1,4 +1,4 @@
-# ToDo List Application
+# ToDo List Application (REST API)
 
 This repository contains a ToDo List application built with native PHP and PDO for database interactions. The application implements user authentication (signup and sign-in) and CRUD functionalities for managing tasks.
 
