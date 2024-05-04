@@ -7,6 +7,7 @@ This repository contains a ToDo List application built with native PHP and PDO f
    <img src='public/images/1.png' width='410'> <img src='public/images//2.png' width='410'>
    <img src='public/images/1.gif'>
 </p>
+
 ## Features
 
 *   **User Authentication:**
