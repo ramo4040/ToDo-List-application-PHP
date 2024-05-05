@@ -4,7 +4,6 @@ namespace app\services;
 
 use app\models\UserModel;
 
-
 class UserService {
     public function __construct(private UserModel $model) {
     }
@@ -47,7 +46,6 @@ class UserService {
         }
 
         if ($user) {
-            session_start();
             $_SESSION["userID"] = $user['userID'];
             $_SESSION["userName"] = $user['userName'];
             header('Location: ./tasks');
